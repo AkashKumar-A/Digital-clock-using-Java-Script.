@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Website">
+    <title>Date</title>
+    <!-- this below link is to import the fontawosme from -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Wallpoet&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="time.css">
+</head>
+<body>
+	<section>
+		<div class="watch">
+			<div class="container">
+				<h2 id="DigitalCLOCKH" class="clock" onload="showTime()">00</h2>
+				<h2>:</h2>
+				<h2 id="DigitalCLOCKM" class="clock" onload="showTime()">00</h2>
+				<h2>:</h2>
+				<h2 id="DigitalCLOCKS" class="clock" onload="showTime()">00</h2>
+				<span id="DigitalCLOCKs" class="clock" onload="showTime()">AM</span>
+
+			</div>
+		</div>
+	</section>
+ <script type="text/javascript">
+     function showTime(){
+    var date = new Date();
+    var h = date.getHours(); 
+    var m = date.getMinutes(); 
+    var s = date.getSeconds(); 
+    var session = "AM";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    var hr = h ;
+    var min =  m ;
+    var sec =  s ;
+    var se = session;
+    document.getElementById("DigitalCLOCKH").innerText = hr;
+    document.getElementById("DigitalCLOCKH").textContent = hr;
+
+    document.getElementById("DigitalCLOCKM").innerText = min;
+    document.getElementById("DigitalCLOCKM").textContent = min;
+    document.getElementById("DigitalCLOCKS").innerText = sec;
+    document.getElementById("DigitalCLOCKS").textContent = sec;
+    document.getElementById("DigitalCLOCKs").innerText = se;
+    document.getElementById("DigitalCLOCKs").textContent = se;
+    
+    setTimeout(showTime, 1000);
+    
+}
+ 
+showTime();
+ </script>
+</body>
+</html>
